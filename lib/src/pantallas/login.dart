@@ -82,6 +82,7 @@ class _LoginPantallaState extends State<LoginPantalla> {
                     child: GestureDetector(
                       onTap: () async {
                         if (!await autenticacionProvider.iniciarSesion()) {
+                          // ignore: deprecated_member_use
                           _key.currentState.showSnackBar(SnackBar(
                             content: Text("Error de inicio de sesion"),
                           ));

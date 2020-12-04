@@ -8,9 +8,9 @@ enum Status { Uninitialized, Unauthenticated, Authenticating, Authenticated }
 
 class AutenticacionProvider with ChangeNotifier {
   FirebaseAuth _auth;
-  FirebaseUser _user;
+  User _user;
   Status _status = Status.Uninitialized;
-  Firestore firestore = Firestore.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
   ServiciosUsuario _serviciosUsuario = ServiciosUsuario();
   ModeloUsuario _modeloUsuario;
 
@@ -18,7 +18,7 @@ class AutenticacionProvider with ChangeNotifier {
 
   ModeloUsuario get modeloUsuario => _modeloUsuario;
 
-  FirebaseUser get user => _user;
+  User get user => _user;
 
   final formKey = GlobalKey<FormState>();
 
@@ -27,6 +27,7 @@ class AutenticacionProvider with ChangeNotifier {
   TextEditingController passw = TextEditingController();
 
   AutenticacionProvider.initialize() : _auth = FirebaseAuth.instance {
+    // ignore: deprecated_member_use
     _auth.onAuthStateChanged.listen(_onStateChanged);
   }
 
@@ -60,7 +61,7 @@ class AutenticacionProvider with ChangeNotifier {
           .createUserWithEmailAndPassword(
               email: email.text.trim(), password: passw.text.trim())
           .then((result) {
-        firestore.collection('users').document(result.user.uid).setData({
+        firestore.collection('users').doc(result.user.uid).set({
           'nombre': nombre.text,
           'email': email.text,
           'uid': result.user.uid,
