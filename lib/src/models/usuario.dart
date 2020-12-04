@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class ModeloUsuario {
+class UserModel {
   static const NOMBRE = "nombre";
   static const EMAIL = "email";
   static const ID = "id";
@@ -13,9 +13,9 @@ class ModeloUsuario {
   String get email => _email;
   String get id => _id;
 
-  ModeloUsuario.fromSnapshot(DocumentSnapshot snapshot) {
-    _nombre = snapshot.data[NOMBRE];
-    _email = snapshot.data[EMAIL];
-    _id = snapshot.data[ID];
+  UserModel.fromSnapshot(DocumentSnapshot snapshot) {
+    _nombre = snapshot.data()[NOMBRE];
+    _email = snapshot.data()[EMAIL];
+    _id = snapshot.data()[ID];
   }
 }

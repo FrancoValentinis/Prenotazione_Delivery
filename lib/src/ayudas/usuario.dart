@@ -3,19 +3,19 @@ import 'package:prenotazione_delivery/src/models/usuario.dart';
 
 class ServiciosUsuario {
   String coleccion = "usuarios";
-  Firestore firestore = Firestore.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   void crearUsuario(Map<String, dynamic> values) {
     String id = values["id"];
-    firestore.collection(coleccion).document(id).setData(values);
+    firestore.collection(coleccion).doc(id).set(values);
   }
 
   void actualizarDatosUsuario(Map<String, dynamic> values) {
-    firestore.collection(coleccion).doc(values["id"]).updateData(values);
+    firestore.collection(coleccion).doc(values["id"]).update(values);
   }
 
-  Future<ModeloUsuario> getUsuarioById(String id) =>
-      firestore.collection(coleccion).document(id).get().then((doc) {
-        return ModeloUsuario.fromSnapshot(doc);
+  Future<UserModel> getUsuarioById(String id) =>
+      firestore.collection(coleccion).doc(id).get().then((doc) {
+        return UserModel.fromSnapshot(doc);
       });
 }
