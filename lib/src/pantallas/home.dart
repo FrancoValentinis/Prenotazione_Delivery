@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prenotazione_delivery/src/ayudas/colores.dart';
+import 'package:prenotazione_delivery/src/ayudas/pantalla_navegacion.dart';
+import 'package:prenotazione_delivery/src/pantallas/carrito.dart';
 import 'package:prenotazione_delivery/src/widgets/boton.dart';
 import 'package:prenotazione_delivery/src/widgets/boton_de_navegacion.dart';
 import 'package:prenotazione_delivery/src/widgets/categorias.dart';
@@ -237,6 +239,9 @@ class _HomeState extends State<Home> {
               nombre: "Ubicación",
             ),
             BotondeNavegacion(
+              onTap: () {
+                cambiarPantalla(context, Carrito());
+              },
               imagenes: "compras.png",
               nombre: "Compras",
             ),

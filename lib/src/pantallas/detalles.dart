@@ -131,6 +131,52 @@ class _DetallesState extends State<Detalles> {
               color: red,
               weight: FontWeight.w600,
             ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.remove,
+                      size: 28,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: red,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
+                      child: TextoPersonalizado(
+                        text: "Añadir al carrito",
+                        color: white,
+                        size: 24,
+                        weight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: red,
+                      size: 28,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

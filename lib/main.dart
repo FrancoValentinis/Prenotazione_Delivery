@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prenotazione_delivery/src/pantallas/home.dart';
+import 'package:prenotazione_delivery/src/pantallas/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: Home(),
+      home: LoginPantalla(),
     );
   }
 }
