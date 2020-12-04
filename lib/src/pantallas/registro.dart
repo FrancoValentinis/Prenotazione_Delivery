@@ -98,7 +98,6 @@ class _RegistroPantallaState extends State<RegistroPantalla> {
                     child: GestureDetector(
                       onTap: () async {
                         if (!await autenticacionProvider.registrarse()) {
-                          // ignore: deprecated_member_use
                           _key.currentState.showSnackBar(SnackBar(
                             content: Text("Registrado Exitosamente"),
                           ));

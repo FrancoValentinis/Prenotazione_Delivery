@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:prenotazione_delivery/src/ayudas/colores.dart';
 
 class Cargando extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: white,
-        child: SpinKitFadingCircle(
-          color: black,
-          size: 30,
-        ));
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[CircularProgressIndicator()],
+    );
   }
 }

@@ -14,8 +14,8 @@ class ModeloUsuario {
   String get id => _id;
 
   ModeloUsuario.fromSnapshot(DocumentSnapshot snapshot) {
-    _nombre = snapshot.data()[NOMBRE];
-    _email = snapshot.data()[EMAIL];
-    _id = snapshot.data()[ID];
+    _nombre = snapshot.data[NOMBRE];
+    _email = snapshot.data[EMAIL];
+    _id = snapshot.data[ID];
   }
 }
