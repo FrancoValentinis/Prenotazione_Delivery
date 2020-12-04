@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:prenotazione_delivery/src/ayudas/colores.dart';
 import 'package:prenotazione_delivery/src/ayudas/pantalla_navegacion.dart';
-import 'package:prenotazione_delivery/src/pantallas/registro.dart';
+import 'package:prenotazione_delivery/src/pantallas/login.dart';
 import 'package:prenotazione_delivery/src/widgets/texto_personalizado.dart';
 
-class LoginPantalla extends StatefulWidget {
+class RegistroPantalla extends StatefulWidget {
   @override
-  _LoginPantallaState createState() => _LoginPantallaState();
+  _RegistroPantallaState createState() => _RegistroPantallaState();
 }
 
-class _LoginPantallaState extends State<LoginPantalla> {
+class _RegistroPantallaState extends State<RegistroPantalla> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +29,23 @@ class _LoginPantallaState extends State<LoginPantalla> {
                   height: 240,
                 ),
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: grey),
+                    borderRadius: BorderRadius.circular(15)),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Username",
+                        icon: Icon(Icons.person)),
+                  ),
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(12),
@@ -77,7 +94,7 @@ class _LoginPantallaState extends State<LoginPantalla> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         TextoPersonalizado(
-                          text: "Iniciar Sesion",
+                          text: "Registrarse",
                           color: white,
                           size: 22,
                         )
@@ -87,13 +104,13 @@ class _LoginPantallaState extends State<LoginPantalla> {
             ),
             GestureDetector(
               onTap: () {
-                cambiarPantalla(context, RegistroPantalla());
+                cambiarPantalla(context, LoginPantalla());
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextoPersonalizado(
-                    text: "No tienes cuenta? Registrarse",
+                    text: "Iniciar Sesion",
                     size: 18,
                   ),
                 ],
