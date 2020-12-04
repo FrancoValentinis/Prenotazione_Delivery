@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:prenotazione_delivery/src/colores.dart';
+import 'package:prenotazione_delivery/src/ayudas/colores.dart';
+import 'package:prenotazione_delivery/src/ayudas/pantalla_navegacion.dart';
 import 'package:prenotazione_delivery/src/models/productos.dart';
+import 'package:prenotazione_delivery/src/pantallas/detalles.dart';
 import 'package:prenotazione_delivery/src/widgets/texto_personalizado.dart';
 
 List<Productos> listaProductos = [
@@ -41,111 +43,118 @@ class Destacados extends StatelessWidget {
             itemBuilder: (_, index) {
               return Padding(
                 padding: EdgeInsets.fromLTRB(12, 14, 16, 12),
-                child: Container(
-                  height: 220,
-                  width: 225,
-                  decoration: BoxDecoration(color: white, boxShadow: [
-                    BoxShadow(
-                        color: red[50], offset: Offset(15, 5), blurRadius: 30)
-                  ]),
-                  child: Column(
-                    children: <Widget>[
-                      Image.asset(
-                        "imagenes/${listaProductos[index].imagen}",
-                        height: 160,
-                        width: 190,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextoPersonalizado(
-                                text: listaProductos[index].nombre),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(8),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: grey[300],
-                                        offset: Offset(1, 1),
-                                        blurRadius: 4)
-                                  ]),
-                              child: Padding(
-                                padding: const EdgeInsets.all(4),
-                                child: listaProductos[index].listaDeseos
-                                    ? Icon(
-                                        Icons.favorite,
-                                        color: red,
-                                        size: 16,
-                                      )
-                                    : Icon(
-                                        Icons.favorite_border,
-                                        color: red,
-                                        size: 16,
-                                      ),
-                              ),
+                child: GestureDetector(
+                  onTap: () {
+                    cambiarPantallaReemplazo(
+                        _, Detalles(productos: listaProductos[index]));
+                  },
+                  child: Container(
+                    height: 220,
+                    width: 225,
+                    decoration: BoxDecoration(color: white, boxShadow: [
+                      BoxShadow(
+                          color: red[50], offset: Offset(15, 5), blurRadius: 30)
+                    ]),
+                    child: Column(
+                      children: <Widget>[
+                        Image.asset(
+                          "imagenes/${listaProductos[index].imagen}",
+                          height: 160,
+                          width: 190,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: TextoPersonalizado(
+                                  text: listaProductos[index].nombre),
                             ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8),
-                                child: TextoPersonalizado(
-                                  text: listaProductos[index].rating.toString(),
-                                  color: grey,
-                                  size: 14,
+                            Padding(
+                              padding: EdgeInsets.all(8),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: grey[300],
+                                          offset: Offset(1, 1),
+                                          blurRadius: 4)
+                                    ]),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(4),
+                                  child: listaProductos[index].listaDeseos
+                                      ? Icon(
+                                          Icons.favorite,
+                                          color: red,
+                                          size: 16,
+                                        )
+                                      : Icon(
+                                          Icons.favorite_border,
+                                          color: red,
+                                          size: 16,
+                                        ),
                                 ),
                               ),
-                              SizedBox(
-                                width: 2,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: red,
-                                size: 16,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: red,
-                                size: 16,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: red,
-                                size: 16,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: red,
-                                size: 16,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: grey,
-                                size: 16,
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 8.0),
-                            child: TextoPersonalizado(
-                              text: "\$${listaProductos[index].precio}",
-                              weight: FontWeight.bold,
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8),
+                                  child: TextoPersonalizado(
+                                    text:
+                                        listaProductos[index].rating.toString(),
+                                    color: grey,
+                                    size: 14,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 2,
+                                ),
+                                Icon(
+                                  Icons.star,
+                                  color: red,
+                                  size: 16,
+                                ),
+                                Icon(
+                                  Icons.star,
+                                  color: red,
+                                  size: 16,
+                                ),
+                                Icon(
+                                  Icons.star,
+                                  color: red,
+                                  size: 16,
+                                ),
+                                Icon(
+                                  Icons.star,
+                                  color: red,
+                                  size: 16,
+                                ),
+                                Icon(
+                                  Icons.star,
+                                  color: grey,
+                                  size: 16,
+                                )
+                              ],
                             ),
-                          )
-                        ],
-                      )
-                    ],
+                            Padding(
+                              padding: const EdgeInsets.only(right: 8.0),
+                              child: TextoPersonalizado(
+                                text: "\$${listaProductos[index].precio}",
+                                weight: FontWeight.bold,
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               );

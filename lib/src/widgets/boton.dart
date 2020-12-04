@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prenotazione_delivery/src/colores.dart';
+import 'package:prenotazione_delivery/src/ayudas/colores.dart';
 
 class Boton extends StatelessWidget {
   final IconData icono;

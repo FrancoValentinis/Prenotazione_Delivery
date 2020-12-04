@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prenotazione_delivery/src/models/categoria.dart';
-import 'package:prenotazione_delivery/src/colores.dart';
+import 'package:prenotazione_delivery/src/ayudas/colores.dart';
 import 'package:prenotazione_delivery/src/widgets/texto_personalizado.dart';
 
 List<Categoria> listaCategorias = [

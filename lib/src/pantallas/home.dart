@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prenotazione_delivery/src/colores.dart';
+import 'package:prenotazione_delivery/src/ayudas/colores.dart';
 import 'package:prenotazione_delivery/src/widgets/boton.dart';
 import 'package:prenotazione_delivery/src/widgets/boton_de_navegacion.dart';
 import 'package:prenotazione_delivery/src/widgets/categorias.dart';
