@@ -45,7 +45,7 @@ class Destacados extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(12, 14, 16, 12),
                 child: GestureDetector(
                   onTap: () {
-                    cambiarPantallaReemplazo(
+                    cambiarPantalla(
                         _, Detalles(productos: listaProductos[index]));
                   },
                   child: Container(

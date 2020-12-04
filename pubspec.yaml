@@ -24,7 +24,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  carousel_slider: ^2.3.1
   carousel_pro: ^1.0.0
 
 
