@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "88890037636",
+    "project_id": "prenotazioneapp",
+    "storage_bucket": "prenotazioneapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88890037636:android:85e352b87e4c16b4db79d1",
+        "android_client_info": {
+          "package_name": "flutter.prenotazione_delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88890037636-8uf7o6djfq032vrt1ikniiks5m4uigbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaoYbafHdg_8kKHpxoEXE7t1od7ov9USU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88890037636-8uf7o6djfq032vrt1ikniiks5m4uigbk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
